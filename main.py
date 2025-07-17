@@ -11,6 +11,10 @@ load_dotenv()
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "API is running"}
+
 # Gắn router
 app.include_router(user_api.router)
 
